@@ -1,1 +1,44 @@
 ;A* Search Algorithm 
+
+; f(n) = g(n) + h(n)
+; Arad 366
+; Bucharest 0
+; Craiova 160
+; Dobreta 242
+; Eforie 161
+; Fagaras 178
+; Giurgiu 77
+; Hirsova 151
+; Iasi 226
+; Lugoj 244
+; Mehadai 241
+; Neamt 234
+; Oradea 380
+; Pitesti 98
+; Rimincu 193
+; Sibiu 253
+; Timisoara 329
+; Urziceni 80
+; Vaslui 119
+; Zerind 374
+
+(setf A 366)
+(setf B 0)
+(setf C 160)
+(setf D 242)
+(setf E 161)
+(setf F 178)
+(setf G 77)
+(setf H 151)
+(setf I 226)
+(setf L 244)
+(setf M 241)
+(setf N 234)
+(setf O 380)
+(setf P 98)
+(setf R 193)
+(setf S 253)
+(setf T 329)
+(setf U 80)
+(setf V 119)
+(setf Z 374)
