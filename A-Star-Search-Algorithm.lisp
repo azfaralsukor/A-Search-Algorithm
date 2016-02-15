@@ -3,102 +3,124 @@
 (defclass City ()
 	((hn	   :accessor hn		  :initarg :hn		:initform 0)
 	 (name	   :accessor name	  :initarg :name 	:initform "Dummy")
-	 (f_s	   :accessor f_s	  :initarg :f_s 	:initform Q)
+	 (f_s	   :accessor f_s	  :initarg :f_s 	:initform "")
 	 (f_gn	   :accessor f_gn	  :initarg :f_gn	:initform 0)
-	 (s_s	   :accessor s_s	  :initarg :s_s 	:initform Q)
+	 (s_s	   :accessor s_s	  :initarg :s_s 	:initform "")
 	 (s_gn	   :accessor s_gn	  :initarg :s_gn	:initform 0)
-	 (t_s	   :accessor t_s	  :initarg :t_s 	:initform Q)
+	 (t_s	   :accessor t_s	  :initarg :t_s 	:initform "")
 	 (t_gn	   :accessor t_gn	  :initarg :t_gn	:initform 0)
-	 (l_s	   :accessor l_s	  :initarg :l_s 	:initform Q)
+	 (l_s	   :accessor l_s	  :initarg :l_s 	:initform "")
 	 (l_gn	   :accessor l_gn	  :initarg :l_gn	:initform 0)
 	)
 )
 
-(setf Q  (make-instance 'City :f_s "" :f_gn 0 :s_s "" :s_gn 0 :t_s "" :t_gn 0 :l_s "" :l_gn 0))
+(setf A  (make-instance 'City :hn 366 :f_gn 140 :s_gn 118 :t_gn 75            :name "Arad"))
+(setf B  (make-instance 'City :hn   0 :f_gn 211 :s_gn 101 :t_gn  90 :l_gn  85 :name "Bucharest"))
+(setf C  (make-instance 'City :hn 160 :f_gn 120 :s_gn 138 :t_gn 146           :name "Craiova"))
+(setf D  (make-instance 'City :hn 242 :f_gn 120 :s_gn  75                     :name "Dobreta"))
+(setf E  (make-instance 'City :hn 161 :f_gn  86                               :name "Eforie"))
+(setf F  (make-instance 'City :hn 178 :f_gn  99 :s_gn 211                     :name "Fagaras"))
+(setf G  (make-instance 'City :hn  77 :f_gn  90                               :name "Giurgiu"))
+(setf H  (make-instance 'City :hn 151 :f_gn  86 :s_gn  98                     :name "Hirsova"))
+(setf I  (make-instance 'City :hn 226 :f_gn  87 :s_gn  92                     :name "Iasi"))
+(setf L  (make-instance 'City :hn 244 :f_gn  70 :s_gn 111                     :name "Lugoj"))
+(setf M  (make-instance 'City :hn 241 :f_gn  70 :s_gn  75                     :name "Mehadia"))
+(setf N  (make-instance 'City :hn 234 :f_gn  87                               :name "Neamt"))
+(setf O  (make-instance 'City :hn 380 :f_gn  71 :s_gn 151                     :name "Oradea"))
+(setf P  (make-instance 'City :hn  98 :f_gn  97 :s_gn 138 :t_gn 101           :name "Pitesti"))
+(setf R  (make-instance 'City :hn 193 :f_gn  80 :s_gn  97 :t_gn 146           :name "Rimnicu Vilcea"))
+(setf S  (make-instance 'City :hn 253 :f_gn 151 :s_gn 140 :t_gn  99 :l_gn  80 :name "Sibiu"))
+(setf Ti (make-instance 'City :hn 329 :f_gn 118 :s_gn 111                     :name "Timisoara"))
+(setf U  (make-instance 'City :hn  80 :f_gn  85 :s_gn 142 :t_gn  98           :name "Urziceni"))
+(setf V  (make-instance 'City :hn 199 :f_gn  92 :s_gn 142                     :name "Vaslui"))
+(setf Z  (make-instance 'City :hn 374 :f_gn  71 :s_gn  75                     :name "Zerind"))
 
-(setf A  (make-instance 'City))
-(setf B  (make-instance 'City))
-(setf C  (make-instance 'City))
-(setf D  (make-instance 'City))
-(setf E  (make-instance 'City))
-(setf F  (make-instance 'City))
-(setf G  (make-instance 'City))
-(setf H  (make-instance 'City))
-(setf I  (make-instance 'City))
-(setf L  (make-instance 'City))
-(setf M  (make-instance 'City))
-(setf N  (make-instance 'City))
-(setf O  (make-instance 'City))
-(setf P  (make-instance 'City))
-(setf R  (make-instance 'City))
-(setf S  (make-instance 'City))
-(setf Ti (make-instance 'City))
-(setf U  (make-instance 'City))
-(setf V  (make-instance 'City))
-(setf Z  (make-instance 'City))
+(setf (f_s A) S)
+(setf (s_s A) Ti)
+(setf (t_s A) Z)
 
-(setf A  (make-instance 'City :hn 366 :f_s S :f_gn 140 :s_s Ti :s_gn 118 :t_s Z :t_gn 75 :name "Arad"))
-(setf B  (make-instance 'City :hn   0 :f_s F :f_gn 211 :s_s P  :s_gn 101 :t_s G :t_gn  90 :l_s U :l_gn  85 :name "Bucharest"))
-(setf C  (make-instance 'City :hn 160 :f_s D :f_gn 120 :s_s P  :s_gn 138 :t_s R :t_gn 146 :name "Craiova"))
-(setf D  (make-instance 'City :hn 242 :f_s C :f_gn 120 :s_s M  :s_gn  75 :name "Dobreta"))
-(setf E  (make-instance 'City :hn 161 :f_s H :f_gn  86 :name "Eforie"))
-(setf F  (make-instance 'City :hn 178 :f_s S :f_gn  99 :s_s B  :s_gn 211 :name "Fagaras"))
-(setf G  (make-instance 'City :hn  77 :f_s B :f_gn  90 :name "Giurgiu"))
-(setf H  (make-instance 'City :hn 151 :f_s E :f_gn  86 :s_s U  :s_gn  98 :name "Hirsova"))
-(setf I  (make-instance 'City :hn 226 :f_s N :f_gn  87 :s_s V  :s_gn  92 :name "Iasi"))
-(setf L  (make-instance 'City :hn 244 :f_s M :f_gn  70 :s_s Ti :s_gn 111 :name "Lugoj"))
-(setf M  (make-instance 'City :hn 241 :f_s L :f_gn  70 :s_s D  :s_gn  75 :name "Mehadia"))
-(setf N  (make-instance 'City :hn 234 :f_s I :f_gn  87 :name "Neamt"))
-(setf O  (make-instance 'City :hn 380 :f_s Z :f_gn  71 :s_s S  :s_gn 151 :name "Oradea"))
-(setf P  (make-instance 'City :hn  98 :f_s R :f_gn  97 :s_s C  :s_gn 138 :t_s B :t_gn 101 :name "Pitesti"))
-(setf R  (make-instance 'City :hn 193 :f_s S :f_gn  80 :s_s P  :s_gn  97 :t_s C :t_gn 146 :name "Rimnicu Vilcea"))
-(setf S  (make-instance 'City :hn 253 :f_s O :f_gn 151 :s_s A  :s_gn 140 :t_s F :t_gn  99 :l_s R :l_gn  80 :name "Sibiu"))
-(setf Ti (make-instance 'City :hn 329 :f_s A :f_gn 118 :s_s L  :s_gn 111 :name "Timisoara"))
-(setf U  (make-instance 'City :hn  80 :f_s B :f_gn  85 :s_s V  :s_gn 142 :t_s H :t_gn  98 :name "Urziceni"))
-(setf V  (make-instance 'City :hn 199 :f_s I :f_gn  92 :s_s U  :s_gn 142 :name "Vaslui"))
-(setf Z  (make-instance 'City :hn 374 :f_s O :f_gn  71 :s_s A  :s_gn  75 :name "Zerind"))
+(setf (f_s B) F)
+(setf (s_s B) P)
+(setf (t_s B) G)
+(setf (l_s B) U)
 
-(setf A  (make-instance 'City :hn 366 :f_s S :f_gn 140 :s_s Ti :s_gn 118 :t_s Z :t_gn 75 :name "Arad"))
-(setf B  (make-instance 'City :hn   0 :f_s F :f_gn 211 :s_s P  :s_gn 101 :t_s G :t_gn  90 :l_s U :l_gn  85 :name "Bucharest"))
-(setf C  (make-instance 'City :hn 160 :f_s D :f_gn 120 :s_s P  :s_gn 138 :t_s R :t_gn 146 :name "Craiova"))
-(setf D  (make-instance 'City :hn 242 :f_s C :f_gn 120 :s_s M  :s_gn  75 :name "Dobreta"))
-(setf E  (make-instance 'City :hn 161 :f_s H :f_gn  86 :name "Eforie"))
-(setf F  (make-instance 'City :hn 178 :f_s S :f_gn  99 :s_s B  :s_gn 211 :name "Fagaras"))
-(setf G  (make-instance 'City :hn  77 :f_s B :f_gn  90 :name "Giurgiu"))
-(setf H  (make-instance 'City :hn 151 :f_s E :f_gn  86 :s_s U  :s_gn  98 :name "Hirsova"))
-(setf I  (make-instance 'City :hn 226 :f_s N :f_gn  87 :s_s V  :s_gn  92 :name "Iasi"))
-(setf L  (make-instance 'City :hn 244 :f_s M :f_gn  70 :s_s Ti :s_gn 111 :name "Lugoj"))
-(setf M  (make-instance 'City :hn 241 :f_s L :f_gn  70 :s_s D  :s_gn  75 :name "Mehadia"))
-(setf N  (make-instance 'City :hn 234 :f_s I :f_gn  87 :name "Neamt"))
-(setf O  (make-instance 'City :hn 380 :f_s Z :f_gn  71 :s_s S  :s_gn 151 :name "Oradea"))
-(setf P  (make-instance 'City :hn  98 :f_s R :f_gn  97 :s_s C  :s_gn 138 :t_s B :t_gn 101 :name "Pitesti"))
-(setf R  (make-instance 'City :hn 193 :f_s S :f_gn  80 :s_s P  :s_gn  97 :t_s C :t_gn 146 :name "Rimnicu Vilcea"))
-(setf S  (make-instance 'City :hn 253 :f_s O :f_gn 151 :s_s A  :s_gn 140 :t_s F :t_gn  99 :l_s R :l_gn  80 :name "Sibiu"))
-(setf Ti (make-instance 'City :hn 329 :f_s A :f_gn 118 :s_s L  :s_gn 111 :name "Timisoara"))
-(setf U  (make-instance 'City :hn  80 :f_s B :f_gn  85 :s_s V  :s_gn 142 :t_s H :t_gn  98 :name "Urziceni"))
-(setf V  (make-instance 'City :hn 199 :f_s I :f_gn  92 :s_s U  :s_gn 142 :name "Vaslui"))
-(setf Z  (make-instance 'City :hn 374 :f_s O :f_gn  71 :s_s A  :s_gn  75 :name "Zerind"))
+(setf (f_s C) D)
+(setf (s_s C) P)
+(setf (t_s C) R)
 
-(setf A  (make-instance 'City :hn 366 :f_s S :f_gn 140 :s_s Ti :s_gn 118 :t_s Z :t_gn 75 :name "Arad"))
-(setf B  (make-instance 'City :hn   0 :f_s F :f_gn 211 :s_s P  :s_gn 101 :t_s G :t_gn  90 :l_s U :l_gn  85 :name "Bucharest"))
-(setf C  (make-instance 'City :hn 160 :f_s D :f_gn 120 :s_s P  :s_gn 138 :t_s R :t_gn 146 :name "Craiova"))
-(setf D  (make-instance 'City :hn 242 :f_s C :f_gn 120 :s_s M  :s_gn  75 :name "Dobreta"))
-(setf E  (make-instance 'City :hn 161 :f_s H :f_gn  86 :name "Eforie"))
-(setf F  (make-instance 'City :hn 178 :f_s S :f_gn  99 :s_s B  :s_gn 211 :name "Fagaras"))
-(setf G  (make-instance 'City :hn  77 :f_s B :f_gn  90 :name "Giurgiu"))
-(setf H  (make-instance 'City :hn 151 :f_s E :f_gn  86 :s_s U  :s_gn  98 :name "Hirsova"))
-(setf I  (make-instance 'City :hn 226 :f_s N :f_gn  87 :s_s V  :s_gn  92 :name "Iasi"))
-(setf L  (make-instance 'City :hn 244 :f_s M :f_gn  70 :s_s Ti :s_gn 111 :name "Lugoj"))
-(setf M  (make-instance 'City :hn 241 :f_s L :f_gn  70 :s_s D  :s_gn  75 :name "Mehadia"))
-(setf N  (make-instance 'City :hn 234 :f_s I :f_gn  87 :name "Neamt"))
-(setf O  (make-instance 'City :hn 380 :f_s Z :f_gn  71 :s_s S  :s_gn 151 :name "Oradea"))
-(setf P  (make-instance 'City :hn  98 :f_s R :f_gn  97 :s_s C  :s_gn 138 :t_s B :t_gn 101 :name "Pitesti"))
-(setf R  (make-instance 'City :hn 193 :f_s S :f_gn  80 :s_s P  :s_gn  97 :t_s C :t_gn 146 :name "Rimnicu Vilcea"))
-(setf S  (make-instance 'City :hn 253 :f_s O :f_gn 151 :s_s A  :s_gn 140 :t_s F :t_gn  99 :l_s R :l_gn  80 :name "Sibiu"))
-(setf Ti (make-instance 'City :hn 329 :f_s A :f_gn 118 :s_s L  :s_gn 111 :name "Timisoara"))
-(setf U  (make-instance 'City :hn  80 :f_s B :f_gn  85 :s_s V  :s_gn 142 :t_s H :t_gn  98 :name "Urziceni"))
-(setf V  (make-instance 'City :hn 199 :f_s I :f_gn  92 :s_s U  :s_gn 142 :name "Vaslui"))
-(setf Z  (make-instance 'City :hn 374 :f_s O :f_gn  71 :s_s A  :s_gn  75 :name "Zerind"))
+(setf (f_s D) C)
+(setf (s_s D) M)
+
+(setf (f_s E) H)
+
+(setf (f_s F) S)
+(setf (s_s F) B)
+
+(setf (f_s G) B)
+
+(setf (f_s H) E)
+(setf (s_s H) U)
+
+(setf (f_s I) N)
+(setf (s_s I) V)
+
+(setf (f_s L) M)
+(setf (s_s L) Ti)
+
+(setf (f_s M) L)
+(setf (s_s M) D)
+
+(setf (f_s N) I)
+
+(setf (f_s O) Z)
+(setf (s_s O) S)
+
+(setf (f_s P) C)
+(setf (s_s P) R)
+(setf (t_s P) B)
+
+(setf (f_s R) S)
+(setf (s_s R) P)
+(setf (t_s R) C)
+
+(setf (f_s S) O)
+(setf (s_s S) A)
+(setf (t_s S) F)
+(setf (l_s S) R)
+
+(setf (f_s Ti) A)
+(setf (s_s Ti) L)
+
+(setf (f_s U) B)
+(setf (s_s U) V)
+(setf (t_s U) H)
+
+(setf (f_s V) I)
+(setf (s_s V) U)
+
+(setf (f_s Z) O)
+(setf (s_s Z) A)
+
+; S Ti Z 
+; F P  G U
+; D P  R
+; C M 
+; H 
+; S B 
+; B
+; E U 
+; N V 
+; M Ti
+; L D 
+; I 
+; Z S 
+; R C B
+; S P C
+; O A F R
+; A L 
+; B V H
+; I U
+; O A
 
 (format t "   A* Search Algorithm
 Initial State: Arad
