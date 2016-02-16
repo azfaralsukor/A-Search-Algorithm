@@ -101,35 +101,14 @@
 (setf (f_s Z) O)
 (setf (s_s Z) A)
 
-; S Ti Z 
-; F P  G U
-; D P  R
-; C M 
-; H 
-; S B 
-; B
-; E U 
-; N V 
-; M Ti
-; L D 
-; I 
-; Z S 
-; R C B
-; S P C
-; O A F R
-; A L 
-; B V H
-; I U
-; O A
-
 (format t "   A* Search Algorithm
 Initial State: Arad
-Goal         : Bucharest~%")
+Goal         : Bucharest")
 
 (setf gn 0)
 
 (defun astar (init_city)
-	(format t "~%Fringe : (")
+	(format t "~%~%Fringe : (")
 		(format t (name init_city)) ;do loop
 		(format t ")~%")
 		(format t (name init_city))
@@ -137,7 +116,7 @@ Goal         : Bucharest~%")
 		(format t "~a" (setf fn (+ (hn init_city) gn))) ; initial f(n) for Arad
 		(setf current init_city)						; set init_city to current city
 
-	(format t "~%Minimum f(n) = " )
+	(format t "~%Next most minimum f(n) cost = " )
 	(format t "~a" (setf min_fn (min (if (= (f_gn current) 0) 9999 (+ (hn (f_s current)) (f_gn current))) 
 									 (if (= (s_gn current) 0) 9999 (+ (hn (s_s current)) (s_gn current))) 
 	  								 (if (= (t_gn current) 0) 9999 (+ (hn (t_s current)) (t_gn current)))
@@ -159,6 +138,8 @@ Goal         : Bucharest~%")
 	
 	(format t "~%Next = " )
 	(format t (name next))
+	(format t "~%Total Distance Traveled = ~a" gn )
+
 	(if (equal "Bucharest" (name next)) (print 'END) (astar next))
 )
 
