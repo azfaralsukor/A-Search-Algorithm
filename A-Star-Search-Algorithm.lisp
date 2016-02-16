@@ -106,15 +106,18 @@ Initial State: Arad
 Goal         : Bucharest")
 
 (setf gn 0)
+(setf fringe ())
 
-(defun astar (init_city)
+(defun astar (current)
+	(setf fringe (cons ((name current) (+ (hn current) gn)) fringe))
 	(format t "~%~%Fringe : (")
-		(format t (name init_city)) ;do loop
-		(format t ")~%")
-		(format t (name init_city))
-		(format t "'s f(n) = " )
-		(format t "~a" (setf fn (+ (hn init_city) gn))) ; initial f(n) for Arad
-		(setf current init_city)						; set init_city to current city
+	;(format t (name current)) ;do loop
+	(dolist (i fringe) (print i)) 
+	(format t "~s"fringe)
+	(format t ")~%")
+	(format t (name current))
+	(format t "'s f(n) = " )
+	(format t "~a" (setf fn (+ (hn current) gn))) ; initial f(n) = g(n) + h(n)
 
 	(format t "~%Next most minimum f(n) cost = " )
 	(format t "~a" (setf min_fn (min (if (= (f_gn current) 0) 9999 (+ (hn (f_s current)) (f_gn current))) 
@@ -124,6 +127,7 @@ Goal         : Bucharest")
 	  							)
 	  				)
 	)
+
 	(cond   ((= min_fn (+ (hn (f_s current)) (f_gn current))) (setf next (f_s current)))
 		    ((= min_fn (+ (hn (s_s current)) (s_gn current))) (setf next (s_s current)))
 		    ((= min_fn (+ (hn (t_s current)) (t_gn current))) (setf next (t_s current)))
